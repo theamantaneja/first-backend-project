@@ -15,4 +15,14 @@ app.use(express.static("public"))
 app.use(cookieParser())
    
 
-export { app }
+//routes
+import userRouter from "./routes/user.routes.js"
+
+
+
+//routes declaration
+app.use("/api/vi/users", userRouter)
+
+
+// http://localhost:8000/api/vi/users -> routes
+export {app} 
