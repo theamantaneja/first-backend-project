@@ -1,4 +1,4 @@
-import { asyncHandler } from "../utils/asyncHandler.js";
+import {asyncHandler} from "../utils/asyncHandler.js"
 import {ApiError} from "../utils/ApiError.js"
 import {User} from "../models/user.model.js"
 import {uploadOnCloudinary} from "../utils/cloudinary.js"
@@ -26,7 +26,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 
     // STEP 3: check if user already exists {username, email}
-    const existedUser = User.findOne({                   //User is from user.models.js which can access database at anytime
+    const existedUser = await User.findOne({                   //User is from user.models.js which can access database at anytime
         $or: [{ username },{ email }] 
     })
 

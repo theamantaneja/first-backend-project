@@ -24,5 +24,5 @@ import userRouter from "./routes/user.routes.js"
 app.use("/api/vi/users", userRouter)
 
 
-// http://localhost:8000/api/vi/users -> routes
+// http://localhost:3000/api/vi/users -> routes
 export {app} 
